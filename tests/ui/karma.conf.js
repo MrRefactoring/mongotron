@@ -41,7 +41,6 @@ module.exports = config => {
       '../../src/ui/vendor/moment/moment.js',
       '../../src/ui/vendor/ng-prettyjson/src/ng-prettyjson.js',
       '../../src/ui/vendor/ng-prettyjson/src/ng-prettyjson-tmpl.js',
-      '../../src/ui/vendor/Keypress/keypress.js',
       '../../src/ui/vendor/codemirror/lib/codemirror.js',
       '../../src/ui/vendor/codemirror/mode/javascript/javascript.js',
       '../../src/ui/vendor/codemirror/addon/hint/show-hint.js',

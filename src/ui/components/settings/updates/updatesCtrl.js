@@ -5,7 +5,7 @@ angular.module('app').controller('updatesCtrl', [
     const autoUpdater = require('lib/modules/autoupdater');
     const logger = require('lib/modules/logger');
     const appConfig = require('src/config/appConfig');
-    const shell = require('electron').shell;
+    const { shell } = require('electron');
 
     $scope.version = appConfig.version;
     $scope.latestRelease = null;

@@ -1,6 +1,3 @@
-// docs for jshint : http://www.jshint.com/docs/
-// options for jshint : http://www.jshint.com/docs/options/
-
 {
   "undef": true,
   "unused": true,

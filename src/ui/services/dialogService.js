@@ -3,9 +3,8 @@
 angular.module('app').service('dialogService', [
   '$q',
   function($q) {
-    var remote = require('remote');
-    var dialog = remote.require('dialog');
-
+    var { remote: { dialog } } = require('electron');
+    
     function DialogService() {}
 
     DialogService.prototype.showOpenDialog = function() {

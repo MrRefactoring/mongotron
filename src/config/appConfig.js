@@ -5,6 +5,8 @@ const path = require('path-extra');
 
 const packageJson = require('../../package.json');
 
+const rootPath = path.join(__dirname, '../../');
+
 let appName = packageJson.name.toLowerCase();
 
 const defaultSettings = {
@@ -17,11 +19,11 @@ const defaultSettings = {
   logLevel: 'debug',
   buildPath: 'build',
   releasePath: 'release',
-  appConfigDir: path.join(path.homedir(), `.${appName}`),
-  logFilePath: path.join(path.homedir(), `.${appName}`, 'logs.json'),
-  dbConfigPath: path.join(path.homedir(), `.${appName}`, 'dbConnections.json'),
-  keybindingsPath: path.join(path.homedir(), `.${appName}`, 'keybindings.json'),
-  themesPath: path.join(path.homedir(), `.${appName}`, 'themes.json')
+  appConfigDir: path.join(rootPath, `.${appName}`),
+  logFilePath: path.join(rootPath, `.${appName}`, 'logs.json'),
+  dbConfigPath: path.join(rootPath, `.${appName}`, 'dbConnections.json'),
+  keybindingsPath: path.join(rootPath, `.${appName}`, 'keybindings.json'),
+  themesPath: path.join(rootPath, `.${appName}`, 'themes.json')
 };
 
 const production = _.extend(_.clone(defaultSettings), {

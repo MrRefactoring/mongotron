@@ -1,9 +1,6 @@
 'use strict';
 
-const app = require('app');
-const BrowserWindow = require('browser-window');
-const crashReporter = require('crash-reporter');
-const ipcMain = require('electron').ipcMain;
+const { app, BrowserWindow, crashReporter, ipcMain } = require('electron');
 const path = require('path');
 
 require('src/mongotron').init();
@@ -16,7 +13,7 @@ const logger = require('lib/modules/logger');
  * ------------------------------------------------ */
 let mainWindow;
 
-crashReporter.start(); // Report crashes to our server.
+// crashReporter.start(); // Report crashes to our server.
 
 ipcMain.on('set-title', (event, title) => {
   mainWindow.setTitle(title || appConfig.name);
@@ -44,9 +41,9 @@ app.on('ready', () => {
 
   mainWindow.setMinimumSize(770, 400);
 
-  mainWindow.loadUrl(path.join(`file://${__dirname}`, '../ui/index.html'));
+  mainWindow.loadURL(path.join(`file://${__dirname}`, '../ui/index.html'));
 
-  // if (appConfig.env !== 'production') mainWindow.openDevTools();
+  if (appConfig.env !== 'production') mainWindow.openDevTools();
 
   mainWindow.on('close', () => {
     app.quit();
@@ -60,7 +57,7 @@ app.on('ready', () => {
   });
 });
 
-process.on('uncaughtException', () => {
+process.on('uncaughtException', (e) => {
   logger.error('\n\nUNCAUGHT ERROR\n');
   logger.error('caught from process');
 });

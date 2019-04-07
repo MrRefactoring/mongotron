@@ -21,7 +21,7 @@ angular.module('app').directive('markdown', [
 
 angular.module('app').directive('markdownCompiled', [
   '$compile', ($compile) => {
-    const shell = require('shell');
+    const { shell } = require('electron');
 
     return {
       restrict: 'A',

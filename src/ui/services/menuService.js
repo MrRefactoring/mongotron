@@ -7,11 +7,7 @@ angular.module('app').factory('menuService', [
   'dialogService',
   'tabCache',
   'navUtils', ($window, $rootScope, $timeout, dialogService, tabCache, navUtils) => {
-    const ipcRenderer = require('electron').ipcRenderer;
-    const shell = require('shell');
-    const remote = require('remote');
-    const Menu = remote.require('menu');
-    const MenuItem = remote.require('menu-item');
+    const { shell, remote: { Menu, MenuItem }, ipcRenderer } = require('electron');
     const appConfig = require('src/config/appConfig');
     const logger = require('lib/modules/logger');
 

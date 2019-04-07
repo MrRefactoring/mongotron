@@ -2,7 +2,7 @@
 
 const babel = require('gulp-babel');
 const childProcess = require('child_process');
-const electron = require('electron-prebuilt');
+const electron = require('electron');
 const electronPackager = require('electron-packager');
 const fs = require('fs');
 const gulp = require('gulp');
